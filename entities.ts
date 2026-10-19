@@ -6,7 +6,7 @@ export interface Location {
     locationLatLng: number[];
     manager?: any;
     region?: any;
-    employees: Employee[]
+    employees?: Employee[]
 }
 
 export interface Employee {
