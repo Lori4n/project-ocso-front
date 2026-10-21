@@ -4,6 +4,7 @@ import { Location } from "@/entities";
 import { TOKEN_NAME } from "@/constants";
 import SelectLocation from "./_components/SelectLocation";
 import LocationCard from "./_components/LocationCard";
+import FormNewLocation from "./_components/FormNetLocation";
 
 const LocationsPage = async ({
   searchParams,
@@ -40,6 +41,7 @@ const LocationsPage = async ({
         <div className="w-8/12">
           <LocationCard store={searchParams.store} />
         </div>
+        <FormNewLocation/>
       </div>
     </div>
   );

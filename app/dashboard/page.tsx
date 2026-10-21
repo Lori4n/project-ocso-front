@@ -8,7 +8,7 @@ export default function DashboardPage({
   return (
     <>
       <div className="h-full w-4/12">
-        <div className="h-[90vh] overflow-hidden overflow-y-auto first:mt-0 my-10 last:mb-0">
+        <div className="h-[90vh] overflow-hidden overflow-y-auto first:mt-0 last:mb-0">
           <EmployeesLocation store={searchParams?.store} />
           <EmployeesLocation store={searchParams?.store} />
           <EmployeesLocation store={searchParams?.store} />
