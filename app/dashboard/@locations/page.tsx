@@ -1,7 +1,6 @@
-import axios from "axios";
 import { cookies } from "next/headers";
 import { Location } from "@/entities";
-import { TOKEN_NAME } from "@/constants";
+import { API_URL } from "@/constants";
 import SelectLocation from "./_components/SelectLocation";
 import LocationCard from "./_components/LocationCard";
 import FormNewLocation from "./_components/FormNetLocation";
@@ -13,16 +12,19 @@ const LocationsPage = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const userCookies = cookies();
-  const token = userCookies.get(TOKEN_NAME)?.value;
-  let { data } = await axios.get<Location[]>(
-    "http://127.0.0.1:4000/locations",
+  const response = await fetch(
+    `${API_URL}/locations`,
     {
       headers: {
-        ...authHeaders(),
+        ...authHeaders()
       },
+      next: {
+        tags: ["dashboard:locations"]
+      }
     }
   );
+
+  let data: Location[] = await response.json();
 
   data = [
     {
