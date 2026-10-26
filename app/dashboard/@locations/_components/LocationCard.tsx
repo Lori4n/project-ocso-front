@@ -15,20 +15,29 @@ export default async function LocationCard({ store }: { store: string | string[]
     }
   });
   
-  const data: Location = await response.json()
+  const data: Location = await response.json();
   return (
     <Card>
       <CardHeader>
-        <b className="w-full">{data.locationName}</b>
+        <b className="w-full text-2xl">{data.locationName}</b>
       </CardHeader>
       <Divider />
-      <CardBody>
+      <CardBody className="flex flex-col w-full items-center">
         <p className="w-full">
-          Manager:
+          Manager:{" "}
           <Link href={{ pathname: `/dashboard/managers/${data.manager?.managerId}` }}>
             <b>{data.manager?.managerFullName}</b>
           </Link>
         </p>
+        <p className="w-full">
+          Dirección: <b>{data.locationAddress}</b>
+        </p>
+        <iframe
+          className="border-2 border-orange-800 rounded-md my-2"
+          width="300"
+          height="200"
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAz0Y6dhhUVleZmt7-H4P01QQWCSEz3LBg&q=${data.locationLatLng[0]},${data.locationLatLng[1]}`}
+        ></iframe>
       </CardBody>
     </Card>
   );
