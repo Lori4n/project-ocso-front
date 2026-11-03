@@ -15,6 +15,7 @@ export default async function createManager(formData: FormData) {
     body: JSON.stringify(manager),
     headers: {
       ...authHeaders(),
+      'conten-type': 'application/json'
     },
   });
 
