@@ -14,7 +14,9 @@ export default async function createProvider(formData: FormData) {
     body: JSON.stringify(provider),
     headers: {
       ...authHeaders(),
+      'content-type': 'application/json'
     },
+    
   })
   console.log(await response.json())
   if (response.status === 201) revalidateTag("dashboard:providers")
