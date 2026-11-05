@@ -31,19 +31,20 @@ const ProductsPage = async () => {
 
     return (
         <form className="px-10 justify-center pt-10" action={createProduct}>
-            <div className="flex flex-col p-10 rounded-md gap-6 bg-orange-500"></div>
-            <h1 className="text-2x1 font-bold"> Crear producto</h1>
-            <Input label="Nombre" name="productName" />
-            <Input
-                label="Precio"
-                endContent={<LuDollarSign size="20" />}
-                name="price"
-            />
-            <Input label="Num. de Sellos" name="countSeal" />
-            <SelectProvider providers={providers} />
-            <Button color="primary" type="submit">
-                Crear producto
-            </Button>
+            <div className="flex flex-col p-10 rounded-md gap-6 bg-orange-500">
+                <h1 className="text-2x1 font-bold"> Crear producto</h1>
+                <Input label="Nombre" name="productName" />
+                <Input
+                    label="Precio"
+                    endContent={<LuDollarSign size="20" />}
+                    name="price"
+                />
+                <Input label="Num. de Sellos" name="countSeal" />
+                <SelectProvider providers={providers} />
+                <Button color="primary" type="submit">
+                    Crear producto
+                </Button>
+            </div>
         </form>
     );
 };

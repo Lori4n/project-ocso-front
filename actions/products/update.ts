@@ -29,6 +29,5 @@ export default async function updateProduct(productId: string, formData: FormDat
     if (response.status === 200) {
         revalidateTag("dashboard:products")
         revalidateTag(`dashboard:products:${productId}`)
-        redirect("/dashboard/products");
     }
 }
