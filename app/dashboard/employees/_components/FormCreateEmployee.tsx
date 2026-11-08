@@ -2,7 +2,7 @@ import createEmployee from "@/actions/employees/create";
 import { API_URL } from "@/constants";
 import { authHeaders } from "@/helpers/authHeaders";
 import { Button, Input } from "@nextui-org/react";
-import SelectLocations from "../[id]/_components/SelectLocation";
+import SelectLocations from "./SelectLocation";
 
 export default async function FormCreateEmployee() {
     const responseLocations = await fetch(`${API_URL}/locations`, {

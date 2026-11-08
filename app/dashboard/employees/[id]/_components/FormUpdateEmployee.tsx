@@ -2,7 +2,7 @@ import updateEmployee from "@/actions/employees/update";
 import SelectLocation from "@/app/dashboard/@locations/_components/SelectLocation";
 import { Employee } from "@/entities";
 import { Button, Input } from "@nextui-org/react";
-import SelectLocations from "./SelectLocation";
+import SelectLocations from "../../_components/SelectLocation";
 import { API_URL } from "@/constants";
 import { authHeaders } from "@/helpers/authHeaders";
 
