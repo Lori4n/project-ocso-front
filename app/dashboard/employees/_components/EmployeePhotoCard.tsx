@@ -9,7 +9,7 @@ export default function EmployeePhotoCard({ employee }: { employee: Employee }) 
                 <h1 className="font-bold text-xl">{employee.employeeName + " " + employee.employeeLastName}</h1>
             </CardHeader>
             <Divider />
-            <Image src={employee.employeePhoto} className="z-0" classNames={{ img: "size-72" }} />
+            <Image src={employee.employeePhoto} className="z-0 object-covers" classNames={{ img: "size-72" }} />
             <CardFooter className="absolute bottom-0 py-2 h-14">
                 <Link href={`/dashboard/employees/${employee.employeeId}`}>
                     <Button variant="ghost"> Actualizar datos </Button>
