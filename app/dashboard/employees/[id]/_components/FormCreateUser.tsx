@@ -35,7 +35,7 @@ export default function FormCreateUserEmployee({ employee }: { employee: Employe
             }}>
                 Generar Contraseña
             </Button>
-            <Button color="danger" type="submit">
+            <Button color="primary" type="submit">
                 Crear Usuario
             </Button>
         </form>
